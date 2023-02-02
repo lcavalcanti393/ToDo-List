@@ -1,0 +1,65 @@
+.container {
+    max-width: 70%;
+    max-height: 80%;
+
+    margin: 0 auto;
+
+    margin-top: 1rem;
+
+    background-color: var(--white);
+    border-radius: 8px;
+
+    border: 1px solid #ccc;
+
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.task {
+    width: 100%;
+    display: flex;
+
+    padding: 2rem 0;
+    
+    height: 3rem;
+    
+}
+
+.taskHeader {
+    display: flex;
+    padding: 2rem;
+}
+
+
+.taskHeader > button[type=submit] {
+    height: 3rem;
+    width: 12rem;
+    justify-content: end;
+    cursor: pointer;
+    padding: 1rem 1.5rem;
+    font-weight: bold;
+    border-radius: 8px;
+}
+.taskHeader > button[type=submit] strong {
+
+    align-items: center;
+    justify-content: center;
+
+}
+
+.table {
+    width: 90%;
+
+    margin: 0 auto;
+
+    margin-top: 1rem;
+    border-top: 1px solid #c9c9c9;
+    border-radius: 5px;
+
+    padding: 1rem;
+}
+
+.table tr, td {
+    padding: 1rem;
+    
+}
+
