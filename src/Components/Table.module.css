@@ -26,21 +26,25 @@
 
 .taskHeader {
     display: flex;
-    padding: 2rem;
+    padding: 2rem 0;
+
+    flex-direction: row-reverse;
+
+    margin-right: 4.5rem;
 }
 
 
 .taskHeader > button[type=submit] {
     height: 3rem;
     width: 12rem;
-    justify-content: end;
     cursor: pointer;
-    padding: 1rem 1.5rem;
+    padding: 1rem;
     font-weight: bold;
     border-radius: 8px;
+
+    
 }
 .taskHeader > button[type=submit] strong {
-
     align-items: center;
     justify-content: center;
 
@@ -51,15 +55,30 @@
 
     margin: 0 auto;
 
-    margin-top: 1rem;
-    border-top: 1px solid #c9c9c9;
-    border-radius: 5px;
-
+    margin-bottom: 3rem;
+    border-radius: 8px;
     padding: 1rem;
+
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
 }
 
-.table tr, td {
+.table tbody tr:nth-child(even) {
+    background-color: var(--fourth-color);
+    color: #fff;
+}
+
+.table tr td{
     padding: 1rem;
+    text-align: center;
     
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-around;
+
+    align-items: center;
+
+    margin: 0 auto;
 }
 

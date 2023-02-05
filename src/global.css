@@ -7,7 +7,7 @@
 
     --first-color: #012E40;
     --second-color: #024959;
-    --third-color: ##026773;
+    --third-color: #026773;
     --fourth-color: #3CA6A6;
     --fifth-color: #F2E3D5;
 }
@@ -24,5 +24,5 @@ body {
 
     font-family: 'Roboto', sans-serif;
 
-    background-color: var(--first-color);
+    background-color: var(--fourth-color);
 }

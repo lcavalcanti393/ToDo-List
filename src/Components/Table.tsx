@@ -23,7 +23,7 @@ export function Table(){
                         <tr>
                             <td>Descrição Tarefa 1</td>
                             <td>Pendente</td>
-                            <td>
+                            <td className={styles.buttons}>
                                 <button disabled>Visualizar</button>
                                 <button disabled>Editar</button>
                                 <button disabled>Excluir</button>
@@ -32,7 +32,7 @@ export function Table(){
                         <tr>
                             <td>Descrição Tarefa 2</td>
                             <td>Pendente</td>
-                            <td>
+                            <td className={styles.buttons}>
                                 <button disabled>Visualizar</button>
                                 <button disabled>Editar</button>
                                 <button disabled>Excluir</button>
@@ -41,7 +41,7 @@ export function Table(){
                         <tr>
                             <td>Descrição Tarefa 3</td>
                             <td>Pendente</td>
-                            <td>
+                            <td className={styles.buttons}>
                                 <button disabled>Visualizar</button>
                                 <button disabled>Editar</button>
                                 <button disabled>Excluir</button>
@@ -50,7 +50,7 @@ export function Table(){
                         <tr>
                             <td>Descrição Tarefa 4</td>
                             <td>Pendente</td>
-                            <td>
+                            <td className={styles.buttons}>
                                 <button disabled>Visualizar</button>
                                 <button disabled>Editar</button>
                                 <button disabled>Excluir</button>
@@ -59,7 +59,7 @@ export function Table(){
                         <tr>
                             <td>Descrição Tarefa 5</td>
                             <td>Pendente</td>
-                            <td>
+                            <td className={styles.buttons}>
                                 <button disabled>Visualizar</button>
                                 <button disabled>Editar</button>
                                 <button disabled>Excluir</button>
@@ -68,7 +68,7 @@ export function Table(){
                         <tr>
                             <td>Descrição Tarefa 6</td>
                             <td>Pendente</td>
-                            <td>
+                            <td className={styles.buttons}>
                                 <button disabled>Visualizar</button>
                                 <button disabled>Editar</button>
                                 <button disabled>Excluir</button>
@@ -77,7 +77,7 @@ export function Table(){
                         <tr>
                             <td>Descrição Tarefa 7</td>
                             <td>Pendente</td>
-                            <td>
+                            <td className={styles.buttons}>
                                 <button disabled>Visualizar</button>
                                 <button disabled>Editar</button>
                                 <button disabled>Excluir</button>
@@ -86,7 +86,7 @@ export function Table(){
                         <tr>
                             <td>Descrição Tarefa 8</td>
                             <td>Pendente</td>
-                            <td>
+                            <td className={styles.buttons}>
                                 <button disabled>Visualizar</button>
                                 <button disabled>Editar</button>
                                 <button disabled>Excluir</button>
@@ -95,7 +95,7 @@ export function Table(){
                         <tr>
                             <td>Descrição Tarefa 9</td>
                             <td>Pendente</td>
-                            <td>
+                            <td className={styles.buttons}>
                                 <button disabled>Visualizar</button>
                                 <button disabled>Editar</button>
                                 <button disabled>Excluir</button>
