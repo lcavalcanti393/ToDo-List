@@ -1,9 +1,6 @@
 .container {
     max-width: 70%;
     max-height: 80%;
-
-    margin: 0 auto;
-
     margin-top: 1rem;
 
     background-color: var(--white);
@@ -35,6 +32,11 @@
 
 
 .taskHeader > button[type=submit] {
+    background: transparent;
+    border: 0;
+    outline: 2px solid var(--green);
+    color: var(--gray-500);
+
     height: 3rem;
     width: 12rem;
     cursor: pointer;
@@ -42,8 +44,14 @@
     font-weight: bold;
     border-radius: 8px;
 
-    
+    transition: 0.4s;
 }
+
+.taskHeader > button[type=submit]:hover {
+    background: var(--green-200);
+    color: var(--white);
+}
+
 .taskHeader > button[type=submit] strong {
     align-items: center;
     justify-content: center;
@@ -62,13 +70,15 @@
     box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
 }
 
+.table thead tr th{
+    padding: 1rem;
+}
+
 .table tbody tr {
     border-radius: 8px;
 }
 
-.table tbody tr:nth-child(even) {
-    /*background-color: var(--fourth-color);
-    color: #fff;*/
+.table tbody tr:nth-child(odd) {
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 
@@ -81,10 +91,52 @@
 
 .buttons {
     display: flex;
-    justify-content: space-around;
+    gap: 0.5rem;
 
+    justify-content: center;
     align-items: center;
 
     margin: 0 auto;
+}
+
+.buttons  button {
+    background: transparent;
+    border: none;
+
+    border-radius: 8px;
+
+    transition: .3s;
+}
+
+.eye:hover {
+    color: var(--blue);
+}
+
+.pencil:hover {
+    color: var(--fourth-color);
+}
+
+.trash:hover {
+    color: var(--red);
+}
+
+@media (max-width: 840px) {
+    .container {
+        margin: 0 0.8rem;
+        overflow-x: scroll;
+    }
+
+    .tableContainer {
+        margin: 0 1rem;
+        font-size: 12px;
+    }
+}
+
+@media (min-width: 500px){
+    .container {
+        margin: 0 auto;
+
+        margin-bottom: 3rem;
+    }
 }
 

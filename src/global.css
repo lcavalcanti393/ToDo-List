@@ -2,8 +2,12 @@
     /* Paleta disponivel em: https://color.adobe.com/pt/Deep%20Teal%20Sea-color-theme-5937536 */
 
     --white: #FFF;
-
     --gray: #8d8d99;
+    --gray-500: #6F6F6F;
+    --red: #E00040;
+    --blue: #6D8EF2;
+    --green: #05A63D;
+    --green-200: #23C95D;
 
     --first-color: #012E40;
     --second-color: #024959;

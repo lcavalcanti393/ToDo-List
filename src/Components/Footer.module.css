@@ -1,0 +1,24 @@
+.footer {
+    width: 100%;
+    background: #000;
+    height: 1rem;
+    color: var(--white);
+
+    padding: 1rem;
+
+    text-align: center;
+
+    overflow: none;
+
+    letter-spacing: 0.08rem;
+}
+
+.footer span {
+    font-weight: normal;
+    font-size: 1rem;
+}
+
+.footer strong a{
+    text-decoration: none;
+    color: var(--green);
+}
