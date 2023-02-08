@@ -20,6 +20,6 @@ export function App() {
       </footer>
 
     </div>
-  )
+  );
 }
 

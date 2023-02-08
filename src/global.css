@@ -26,7 +26,10 @@ body {
     padding: 0;
     box-sizing: border-box;
 
+    min-height: 100vh;
+
     font-family: 'Roboto', sans-serif;
 
     background-color: var(--first-color);
 }
+

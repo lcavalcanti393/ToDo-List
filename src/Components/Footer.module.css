@@ -4,13 +4,12 @@
     height: 1rem;
     color: var(--white);
 
+    bottom: 0;
     padding: 1rem;
 
     text-align: center;
-
-    overflow: none;
-
     letter-spacing: 0.08rem;
+
 }
 
 .footer span {

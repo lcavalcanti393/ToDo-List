@@ -1,0 +1,31 @@
+::-webkit-scrollbar {
+    width: 12px;
+    border-radius: 8px;
+    background-color: var(--gray);
+    border: 5px solid var(--white);
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--gray-500);
+    border-radius: 50px ;
+    border: 2px solid var(--white);
+}
+
+footer {
+    margin: 0;
+}
+
+@media (min-width: 1400px) {
+    body {
+        overflow-x: hidden;
+    }
+    
+}
+
+@media (min-height: 900px) {
+    body {
+        overflow-y: hidden;
+    }
+}
+
+

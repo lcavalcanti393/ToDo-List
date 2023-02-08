@@ -1,0 +1,59 @@
+input[type=checkbox] {
+    width: 1.2rem;
+    height: 1.2rem;
+}
+
+input[type=checkbox]:checked {
+    background: var(--blue);
+}
+
+
+.secondData {
+    width: 73%;
+    text-align: justify;
+
+    font-size: 18px;
+
+}
+
+.secondDataFalse {
+    width: 73%;
+    text-align: justify;
+    
+    font-style: italic;
+    font-size: 18px;
+
+    color: var(--gray-500);
+    text-decoration: line-through;
+}
+
+.buttons {
+    display: flex;
+    gap: 0.5rem;
+
+    justify-content: center;
+    align-items: center;
+
+    margin: 0 auto;
+}
+
+.buttons  button {
+    background: transparent;
+    border: none;
+
+    border-radius: 8px;
+
+    transition: .3s;
+}
+
+.eye:hover {
+    color: var(--blue);
+}
+
+.pencil:hover {
+    color: var(--fourth-color);
+}
+
+.trash:hover {
+    color: var(--red);
+}

@@ -1,134 +1,41 @@
 import { useState } from 'react';
-import { Trash, PencilLine, Eye } from 'phosphor-react';
-import { Modal } from './Modal';
+import { ListItem } from './ListItem';
 
 import styles from './Table.module.css';
 
+
+export type Item = {
+    id: number;
+    content: string;
+    done: boolean;
+}
+
+
 export function Table(){
 
-    const [isOpen, setIsOpen] = useState(false);
+    const[list, setList] = useState<Item[]>([
+        { id: 1, content: "Comprar pão na padaria", done: false},
+        { id: 2, content: "Comprar bolo na padaria", done: true}
+    ]);
 
     return(
         <div className={styles.container}>
-            <header className={styles.taskHeader}> 
-                <button type='submit' onClick={ () => setIsOpen(!isOpen) }><strong>Cadastrar Nova Tarefa</strong></button>
+            <header className={styles.taskHeader}>
+                <input type="text" placeholder="Escrever nova tarefa" />
+                <button type='submit' ><strong>Cadastrar Nova Tarefa</strong></button>
             </header>
 
             <main>
                 <div className={styles.tableContainer}>
-                    <table className={styles.table}>
-                        <thead>
-                            <tr>
-                                <th>Tarefa</th>
-                                <th>Status</th>
-                                <th>Opções</th>
-                                <th>Criação</th>
-                            </tr>
-                        </thead>
-
+                    <table className={styles.table}>                   
                         <tbody>
-                            <tr>
-                                <td>Descrição Tarefa 1</td>
-                                <td>Pendente</td>
-                                <td className={styles.buttons}>
-                                    <button className={styles.eye}><Eye size={24} /></button>
-                                    <button className={styles.pencil}><PencilLine size={24} /></button>
-                                    <button className={styles.trash}><Trash size={24}/></button>
-                                </td>
-                                <td>
-                                    <time>2 dias atrás</time>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Descrição Tarefa 2</td>
-                                <td>Pendente</td>
-                                <td className={styles.buttons}>
-                                    <button className={styles.eye}><Eye size={24} /></button>
-                                    <button className={styles.pencil}><PencilLine size={24} /></button>
-                                    <button className={styles.trash}><Trash size={24}/></button>
-                                </td>
-                                <td>2 dias atrás</td>
-                            </tr>
-                            <tr>
-                                <td>Descrição Tarefa 3</td>
-                                <td>Pendente</td>
-                                <td className={styles.buttons}>
-                                    <button className={styles.eye}><Eye size={24} /></button>
-                                    <button className={styles.pencil}><PencilLine size={24} /></button>
-                                    <button className={styles.trash}><Trash size={24}/></button>
-                                </td>
-                                <td>2 dias atrás</td>
-                            </tr>
-                            <tr>
-                                <td>Descrição Tarefa 4</td>
-                                <td>Pendente</td>
-                                <td className={styles.buttons}>
-                                    <button className={styles.eye}><Eye size={24} /></button>
-                                    <button className={styles.pencil}><PencilLine size={24} /></button>
-                                    <button className={styles.trash}><Trash size={24}/></button>
-                                </td>
-                                <td>2 dias atrás</td>
-                            </tr>
-                            <tr>
-                                <td>Descrição Tarefa 5</td>
-                                <td>Pendente</td>
-                                <td className={styles.buttons}>
-                                    <button className={styles.eye}><Eye size={24} /></button>
-                                    <button className={styles.pencil}><PencilLine size={24} /></button>
-                                    <button className={styles.trash}><Trash size={24}/></button>
-                                </td>
-                                <td>2 dias atrás</td>
-                            </tr>
-                            <tr>
-                                <td>Descrição Tarefa 6</td>
-                                <td>Pendente</td>
-                                <td className={styles.buttons}>
-                                    <button className={styles.eye}><Eye size={24} /></button>
-                                    <button className={styles.pencil}><PencilLine size={24} /></button>
-                                    <button className={styles.trash}><Trash size={24}/></button>
-                                </td>
-                                <td>2 dias atrás</td>
-                            </tr>
-                            <tr>
-                                <td>Descrição Tarefa 7</td>
-                                <td>Pendente</td>
-                                <td className={styles.buttons}>
-                                    <button className={styles.eye}><Eye size={24} /></button>
-                                    <button className={styles.pencil}><PencilLine size={24} /></button>
-                                    <button className={styles.trash}><Trash size={24}/></button>
-                                </td>
-                                <td>2 dias atrás</td>
-                            </tr>
-                            <tr>
-                                <td>Descrição Tarefa 8</td>
-                                <td>Pendente</td>
-                                <td className={styles.buttons}>
-                                    <button className={styles.eye}><Eye size={24} /></button>
-                                    <button className={styles.pencil}><PencilLine size={24} /></button>
-                                    <button className={styles.trash}><Trash size={24}/></button>
-                                </td>
-                                <td>2 dias atrás</td>
-                            </tr>
-                            <tr>
-                                <td>Descrição Tarefa 9</td>
-                                <td>Pendente</td>
-                                <td className={styles.buttons}>
-                                    <button className={styles.eye}><Eye size={24} /></button>
-                                    <button className={styles.pencil}><PencilLine size={24} /></button>
-                                    <button className={styles.trash}><Trash size={24}/></button>
-                                </td>
-                                <td>2 dias atrás</td>
-                            </tr>
+                            {list.map((item, index)=>(
+                                <ListItem   key={index} task={item} />
+                            ))}
                         </tbody>
                     </table>
                 </div>
-
             </main>
-
-            <footer>
-
-                <Modal isOpen={isOpen} setCloseModal={() => setIsOpen(!isOpen)} />
-            </footer>
 
         </div>
     );

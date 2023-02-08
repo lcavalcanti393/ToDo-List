@@ -1,9 +1,20 @@
-import { useState } from 'react';
+import styles from './Modal.module.css';
+import { Item } from './Table';
 
 interface ModalContent{
     isOpen: boolean;
     setCloseModal: () => void;
 }
+
+type Props = {
+    task: Item;
+}
+
+/*
+
+    AINDA FALTA ENVIAR DADOS PARA O MODAL
+
+*/
 
 const BACKGROUND_STYLE: object = {
     position: 'fixed',
@@ -30,14 +41,32 @@ const MODAL_STYLE: object = {
 
 }
 
-export function Modal({ isOpen, setCloseModal  }: ModalContent){
+export function Modal({ isOpen, setCloseModal  }: ModalContent, { task }: Props){
 
     if( isOpen ){
         return(
             <div  style={BACKGROUND_STYLE}>
                 <div style={MODAL_STYLE}>
+
+                    <table>
+                        <thead>
+                            <td>Situação</td>
+                            <td>Descrição</td>
+                            <td>Horário</td>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>{task.done ? 'Feito' : 'Pendente'}</td>
+                                <td>{task.content}</td>
+                                <td>2 horas atrás</td>
+                            </tr>
+                        </tbody>
+                    </table>
                     <p>Testando Modal</p>
-                    <button onClick={setCloseModal}>Fechar modal</button>
+
+                    <footer>
+                        <button onClick={setCloseModal}>Fechar modal</button>
+                    </footer>
                 </div>
             </div>
         );
