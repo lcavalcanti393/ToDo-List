@@ -48,7 +48,7 @@ export function Modal({ isOpen, setCloseModal  }: ModalContent, { task }: Props)
             <div  style={BACKGROUND_STYLE}>
                 <div style={MODAL_STYLE}>
 
-                    <table>
+                    {/*<table>
                         <thead>
                             <td>Situação</td>
                             <td>Descrição</td>
@@ -61,7 +61,10 @@ export function Modal({ isOpen, setCloseModal  }: ModalContent, { task }: Props)
                                 <td>2 horas atrás</td>
                             </tr>
                         </tbody>
-                    </table>
+                    </table>*/}
+
+                    
+
                     <p>Testando Modal</p>
 
                     <footer>
