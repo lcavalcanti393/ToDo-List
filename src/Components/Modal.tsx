@@ -33,14 +33,15 @@ const MODAL_STYLE: object = {
     display: 'flex',
     justyfyContent: 'center',
     alignItens: 'center',
-    flex: 1,
+    flexDirection: 'column',
     position : 'fixed',
-    width: '45rem',
+    width: '60rem',
     height: '20rem',
     top: '50%',
     left: '50%',
     transform: 'translate(-50%, -50%)',
-    /*padding: '9.375rem',*/
+    margin: '0',
+    padding: '0',
     borderRadius: '8px',
     backgroundColor: '#FFF',
 
@@ -57,28 +58,30 @@ export function Modal({ isOpen, setCloseModal  }: ModalContent, props: Props){
                         <h1>Informações da tarefa</h1>
                     </header>
 
-                    <main>
+                    <main className={styles.mainModal}>
                         <table>
                             <thead>
-                                <td>Situação</td>
-                                <td>Descrição</td>
-                                <td>Horário</td>
+                                <td className={styles.tableFirst}>Situação</td>
+                                <td className={styles.tableSecond}>Descrição</td>
+                                <td className={styles.tableThird}>Horário</td>
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>{props.done ? 'Feito' : 'Pendente'}</td>
-                                    <td>{props.content}</td>
-                                    <td>2 horas atrás</td>
+                                    <td className={styles.tableFirst}> <span> {props.done ? 'Feito' : 'Pendente'} </span> </td>
+                                    <td className={styles.tableSecond}>{props.content}</td>
+                                    <td className={styles.tableThird}> <span> 2 horas atrás </span> </td>
                                 </tr>
                             </tbody>
                         </table>
-                    </main>
-                    
+                    </main>                    
 
-                    <p>Testando Modal</p>
-
-                    <footer>
-                        <button className={styles.footerButton} onClick={setCloseModal}>Fechar modal</button>
+                    <footer className={styles.footerModal}>
+                        <button className={styles.footerButton} 
+                                onClick={setCloseModal}
+                                type='submit'
+                        >
+                                <strong>Fechar modal</strong>
+                        </button>
                     </footer>
                 </div>
             </div>

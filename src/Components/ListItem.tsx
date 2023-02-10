@@ -2,15 +2,16 @@ import { useState } from 'react';
 import { Trash, Eye } from 'phosphor-react';
 import styles from './ListItem.module.css';
 
-import { Item } from './Table';
+//import { Item } from './Table';
 import { Modal } from './Modal';
 
-
 type Props = {
-    task: Item
+    id: number;
+    content: string;
+    done: boolean;
 }
 
-export function ListItem({ task }: Props) {
+export function ListItem(task: Props) {
 
     const [isOpen, setIsOpen] = useState(false);
 
@@ -33,13 +34,14 @@ export function ListItem({ task }: Props) {
             <td className={styles.buttons}>
                 <button onClick={() => setIsOpen(!isOpen)} 
                         className={styles.eye} 
-                          
+                        key={task.id}
+                        
                 >
-                            <Eye size={26}  />
+                            <Eye size={26} alt="Visualizar tarefa"/>
                 </button>
 
                 <button className={styles.trash}>
-                    <Trash size={26}/>
+                    <Trash size={26} alt="Apagar tarefa"/>
                 </button>
 
             </td>
@@ -47,6 +49,7 @@ export function ListItem({ task }: Props) {
 
             <Modal  isOpen={isOpen} 
                     setCloseModal={() => setIsOpen(!isOpen)} 
+                    {...task}
             />
             
         </tr>

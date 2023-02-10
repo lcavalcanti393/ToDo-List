@@ -15,7 +15,8 @@ export function Table(){
 
     const[list, setList] = useState<Item[]>([
         { id: 1, content: "Comprar pão na padaria", done: false},
-        { id: 2, content: "Comprar bolo na padaria", done: true}
+        { id: 2, content: "Comprar bolo na padaria", done: true},
+        { id: 3, content: "Estudar ReactJS", done: false}
     ]);
 
     return(
@@ -29,8 +30,8 @@ export function Table(){
                 <div className={styles.tableContainer}>
                     <table className={styles.table}>                   
                         <tbody>
-                            {list.map((item, index)=>(
-                                <ListItem   key={index} task={item} />
+                            {list.map((item)=>(
+                                <ListItem key={item.id} {...item} />
                             ))}
                         </tbody>
                     </table>
