@@ -18,10 +18,12 @@ export function ListItem({ task }: Props) {
 
     return (
         <tr key={task.id}>
-            <td>  <input    type="checkbox" 
-                            onChange={e => setIsChecked(e.target.checked)}
-                            checked={isChecked}
-                    /> 
+            <td>  
+                <input    
+                    type="checkbox" 
+                    onChange={e => setIsChecked(e.target.checked)}
+                    checked={isChecked}
+                /> 
             </td>
 
             <td className={isChecked ? styles.secondDataFalse : styles.secondData}> 
@@ -30,8 +32,9 @@ export function ListItem({ task }: Props) {
 
             <td className={styles.buttons}>
                 <button onClick={() => setIsOpen(!isOpen)} 
-                        className={styles.eye}   
-                        >
+                        className={styles.eye} 
+                          
+                >
                             <Eye size={26}  />
                 </button>
 
@@ -42,7 +45,9 @@ export function ListItem({ task }: Props) {
             </td>
 
 
-            <Modal isOpen={isOpen} setCloseModal={() => setIsOpen(!isOpen)} />
+            <Modal  isOpen={isOpen} 
+                    setCloseModal={() => setIsOpen(!isOpen)} 
+            />
             
         </tr>
     );

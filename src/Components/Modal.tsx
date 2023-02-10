@@ -1,5 +1,4 @@
 import styles from './Modal.module.css';
-import { Item } from './Table';
 
 interface ModalContent{
     isOpen: boolean;
@@ -7,7 +6,9 @@ interface ModalContent{
 }
 
 type Props = {
-    task: Item;
+    id: number;
+    content: string;
+    done: boolean;
 }
 
 /*
@@ -29,46 +30,55 @@ const BACKGROUND_STYLE: object = {
 }
 
 const MODAL_STYLE: object = {
+    display: 'flex',
+    justyfyContent: 'center',
+    alignItens: 'center',
+    flex: 1,
     position : 'fixed',
     width: '45rem',
     height: '20rem',
     top: '50%',
     left: '50%',
     transform: 'translate(-50%, -50%)',
-    padding: '9.375rem',
+    /*padding: '9.375rem',*/
     borderRadius: '8px',
     backgroundColor: '#FFF',
 
 }
 
-export function Modal({ isOpen, setCloseModal  }: ModalContent, { task }: Props){
+export function Modal({ isOpen, setCloseModal  }: ModalContent, props: Props){
 
     if( isOpen ){
         return(
             <div  style={BACKGROUND_STYLE}>
                 <div style={MODAL_STYLE}>
 
-                    {/*<table>
-                        <thead>
-                            <td>Situação</td>
-                            <td>Descrição</td>
-                            <td>Horário</td>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>{task.done ? 'Feito' : 'Pendente'}</td>
-                                <td>{task.content}</td>
-                                <td>2 horas atrás</td>
-                            </tr>
-                        </tbody>
-                    </table>*/}
+                    <header className={styles.headerModal}>
+                        <h1>Informações da tarefa</h1>
+                    </header>
 
+                    <main>
+                        <table>
+                            <thead>
+                                <td>Situação</td>
+                                <td>Descrição</td>
+                                <td>Horário</td>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>{props.done ? 'Feito' : 'Pendente'}</td>
+                                    <td>{props.content}</td>
+                                    <td>2 horas atrás</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </main>
                     
 
                     <p>Testando Modal</p>
 
                     <footer>
-                        <button onClick={setCloseModal}>Fechar modal</button>
+                        <button className={styles.footerButton} onClick={setCloseModal}>Fechar modal</button>
                     </footer>
                 </div>
             </div>
