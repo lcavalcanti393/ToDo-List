@@ -11,12 +11,6 @@ type Props = {
     done: boolean;
 }
 
-/*
-
-    AINDA FALTA ENVIAR DADOS PARA O MODAL
-
-*/
-
 const BACKGROUND_STYLE: object = {
     position: 'fixed',
     top: 0,
@@ -37,7 +31,7 @@ const MODAL_STYLE: object = {
     position : 'fixed',
     width: '60rem',
     height: '20rem',
-    top: '50%',
+    top: '34%',
     left: '50%',
     transform: 'translate(-50%, -50%)',
     margin: '0',
@@ -59,12 +53,13 @@ export function Modal({ isOpen, setCloseModal  }: ModalContent, props: Props){
                     </header>
 
                     <main className={styles.mainModal}>
+                        <div className={styles.tableHeader}>
+                            <span className={styles.tableHeaderFirst}>Situação</span>
+                            <span className={styles.tableHeaderSecond}>Descrição</span>
+                            <span className={styles.tableHeaderThird}>Horário</span>
+                        </div>
+
                         <table>
-                            <thead>
-                                <td className={styles.tableFirst}>Situação</td>
-                                <td className={styles.tableSecond}>Descrição</td>
-                                <td className={styles.tableThird}>Horário</td>
-                            </thead>
                             <tbody>
                                 <tr>
                                     <td className={styles.tableFirst}> <span> {props.done ? 'Feito' : 'Pendente'} </span> </td>
