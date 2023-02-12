@@ -4,16 +4,17 @@ import { Trash, Eye } from 'phosphor-react';
 import styles from './ListItem.module.css';
 
 import { Item } from './Table';
-import { Modal } from './Modal';
 
 type Props = {
     task: Item,
+    isOpen: boolean,
+    setIsOpen: Function,
     onDeleteItem: Function;
 }
 
-export function ListItem({ task, onDeleteItem }: Props) {
+export function ListItem({ task, isOpen, setIsOpen, onDeleteItem }: Props) {
 
-    const [isOpen, setIsOpen] = useState(false);
+    //const [isOpen, setIsOpen] = useState(false);
 
     const [isChecked, setIsChecked] = useState(task.done);
 
@@ -50,10 +51,7 @@ export function ListItem({ task, onDeleteItem }: Props) {
             </td>
 
 
-            <Modal  isOpen={isOpen} 
-                    setCloseModal={() => setIsOpen(!isOpen)} 
-                    
-            />
+            
             
         </tr>
     );

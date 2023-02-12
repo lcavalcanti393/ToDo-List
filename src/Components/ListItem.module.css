@@ -50,10 +50,6 @@ input[type=checkbox]:checked {
     color: var(--blue);
 }
 
-.pencil:hover {
-    color: var(--fourth-color);
-}
-
 .trash:hover {
     color: var(--red);
 }

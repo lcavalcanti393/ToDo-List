@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { ListItem } from './ListItem';
+import { Modal } from './Modal';
 
 import styles from './Table.module.css';
 
@@ -20,6 +21,8 @@ export function Table(){
     ]);
 
     const [inputItem, setInputItem] = useState('');
+
+    const [isOpen, setIsOpen] = useState(false);
 
     function handleAddItem() {
         if(inputItem !== ''){        
@@ -70,12 +73,20 @@ export function Table(){
                             {list.map((item)=>(
                                 <ListItem   key={item.id} 
                                             task={item} 
-                                            onDeleteItem={onDeleteItem}/>
+                                            onDeleteItem={onDeleteItem}
+                                            isOpen={isOpen}
+                                            setIsOpen={()=> setIsOpen(!isOpen)}
+                                />
+                                            
                             ))}
                         </tbody>
                     </table>
                 </div>
             </main>
+
+            <Modal  isOpen={isOpen} 
+                    setCloseModal={() => setIsOpen(!isOpen)}
+            />
 
         </div>
     );

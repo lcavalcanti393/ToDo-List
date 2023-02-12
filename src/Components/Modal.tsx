@@ -1,3 +1,5 @@
+//import { Item } from './Table';
+
 import styles from './Modal.module.css';
 
 interface ModalContent{
@@ -5,10 +7,14 @@ interface ModalContent{
     setCloseModal: () => void;
 }
 
+/*type Props = {
+    item: Item,
+}*/
+
 type Props = {
-    id: number;
-    content: string;
-    done: boolean;
+    id: number,
+    content: string,
+    done: boolean
 }
 
 const BACKGROUND_STYLE: object = {
@@ -41,7 +47,7 @@ const MODAL_STYLE: object = {
 
 }
 
-export function Modal({ isOpen, setCloseModal  }: ModalContent, props: Props){
+export function Modal({ isOpen, setCloseModal  }: ModalContent, item : Props){
 
     if( isOpen ){
         return(
@@ -59,11 +65,11 @@ export function Modal({ isOpen, setCloseModal  }: ModalContent, props: Props){
                             <span className={styles.tableHeaderThird}>Horário</span>
                         </div>
 
-                        <table>
+                        <table className={styles.tableModal}>
                             <tbody>
                                 <tr>
-                                    <td className={styles.tableFirst}> <span> {props.done ? 'Feito' : 'Pendente'} </span> </td>
-                                    <td className={styles.tableSecond}>{props.content}</td>
+                                    <td className={styles.tableFirst}> <span> {item.done ? 'Feito' : 'Pendente'} </span> </td>
+                                    <td className={styles.tableSecond}>{item.content}</td>
                                     <td className={styles.tableThird}> <span> 2 horas atrás </span> </td>
                                 </tr>
                             </tbody>
