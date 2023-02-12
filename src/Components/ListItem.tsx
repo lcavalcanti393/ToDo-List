@@ -18,7 +18,7 @@ export function ListItem({ task, onDeleteItem }: Props) {
     const [isChecked, setIsChecked] = useState(task.done);
 
     function handleDeleteItem() {
-        onDeleteItem;
+        onDeleteItem(task)
     }
 
     return (
@@ -52,7 +52,7 @@ export function ListItem({ task, onDeleteItem }: Props) {
 
             <Modal  isOpen={isOpen} 
                     setCloseModal={() => setIsOpen(!isOpen)} 
-                    {...task}
+                    
             />
             
         </tr>

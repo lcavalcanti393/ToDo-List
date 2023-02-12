@@ -37,27 +37,30 @@ export function Table(){
         return null
     }
 
-    function onDeleteItem(listItens: Item) {
-        /*
-        const newListWithoutDeleted = list.filter(lists => {
+    function onDeleteItem(listItens: Item): void {
+        
+        const newListWithDeletedItem = list.filter(lists => {
             return lists !== listItens;
         });
 
-        setList(newListWithoutDeleted);
-        */
-
-        console.log("fui clicado");
+        setList(newListWithDeletedItem);
     }
 
     return(
         <div className={styles.container}>
             <header className={styles.taskHeader}>
+
                 <input  type="text" 
                         value={inputItem} 
                         placeholder="Escrever nova tarefa"
                         onChange={e=>setInputItem(e.target.value)}
                 />
-                <button type='submit' onClick={handleAddItem} ><strong>Cadastrar Nova Tarefa</strong></button>
+                <button type='submit' 
+                        onClick={handleAddItem} 
+                >
+                    <strong>Cadastrar Nova Tarefa</strong>
+                </button>
+                
             </header>
 
             <main>
@@ -67,7 +70,7 @@ export function Table(){
                             {list.map((item)=>(
                                 <ListItem   key={item.id} 
                                             task={item} 
-                                            onDeleteItem={()=>onDeleteItem}/>
+                                            onDeleteItem={onDeleteItem}/>
                             ))}
                         </tbody>
                     </table>
