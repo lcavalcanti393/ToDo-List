@@ -1,4 +1,4 @@
-import { useState, MouseEventHandler } from 'react';
+import { useState } from 'react';
 import { Trash, Eye } from 'phosphor-react';
 
 import styles from './ListItem.module.css';
@@ -7,14 +7,19 @@ import { Item } from './Table';
 import { Modal } from './Modal';
 
 type Props = {
-    task: Item
+    task: Item,
+    onDeleteItem: Function;
 }
 
-export function ListItem({ task }: Props, onDeleteItem: void) {
+export function ListItem({ task, onDeleteItem }: Props) {
 
     const [isOpen, setIsOpen] = useState(false);
 
-    const[isChecked, setIsChecked] = useState(task.done);
+    const [isChecked, setIsChecked] = useState(task.done);
+
+    function handleDeleteItem() {
+        onDeleteItem;
+    }
 
     return (
         <tr key={task.id}>
@@ -34,12 +39,11 @@ export function ListItem({ task }: Props, onDeleteItem: void) {
                 <button onClick={() => setIsOpen(!isOpen)} 
                         className={styles.eye} 
                         key={task.id}
-                        
                 >
                             <Eye size={26} alt="Visualizar tarefa"/>
                 </button>
 
-                <button className={styles.trash}>
+                <button className={styles.trash} onClick={handleDeleteItem}>
                     <Trash  size={26} alt="Apagar tarefa"/>
                 </button>
 

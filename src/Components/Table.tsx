@@ -37,14 +37,16 @@ export function Table(){
         return null
     }
 
-    function handleDeleteListItem(listItens: Item): void{
-
+    function onDeleteItem(listItens: Item) {
+        /*
         const newListWithoutDeleted = list.filter(lists => {
             return lists !== listItens;
         });
 
         setList(newListWithoutDeleted);
+        */
 
+        console.log("fui clicado");
     }
 
     return(
@@ -63,7 +65,9 @@ export function Table(){
                     <table className={styles.table}>                   
                         <tbody>
                             {list.map((item)=>(
-                                <ListItem key={item.id} task={item}/>
+                                <ListItem   key={item.id} 
+                                            task={item} 
+                                            onDeleteItem={()=>onDeleteItem}/>
                             ))}
                         </tbody>
                     </table>

@@ -16,20 +16,16 @@
     --fifth-color: #F2E3D5;
 }
 
-:focus{
-    outline: none;
-    box-shadow: 0 0 0 2px #ccc;
-}
-
-body {
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
 
+body {
     min-height: 100vh;
-
     font-family: 'Roboto', sans-serif;
-
     background-color: var(--first-color);
+
 }
 

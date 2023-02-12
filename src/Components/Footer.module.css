@@ -1,10 +1,9 @@
 .footer {
     width: 100%;
     background: #000;
-    height: 1rem;
+    height: 5vh;
     color: var(--white);
 
-    bottom: 0;
     padding: 1rem;
 
     text-align: center;
