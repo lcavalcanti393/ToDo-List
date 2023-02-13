@@ -1,15 +1,12 @@
-//import { Item } from './Table';
+import { Item } from './Table';
 
 import styles from './Modal.module.css';
 
 interface ModalContent{
     isOpen: boolean;
     setCloseModal: () => void;
+    task: Item,
 }
-
-/*type Props = {
-    item: Item,
-}*/
 
 type Props = {
     id: number,
@@ -47,7 +44,7 @@ const MODAL_STYLE: object = {
 
 }
 
-export function Modal({ isOpen, setCloseModal  }: ModalContent, item : Props){
+export function Modal({ isOpen, setCloseModal  }: ModalContent, task: Props){
 
     if( isOpen ){
         return(
@@ -68,8 +65,8 @@ export function Modal({ isOpen, setCloseModal  }: ModalContent, item : Props){
                         <table className={styles.tableModal}>
                             <tbody>
                                 <tr>
-                                    <td className={styles.tableFirst}> <span> {item.done ? 'Feito' : 'Pendente'} </span> </td>
-                                    <td className={styles.tableSecond}>{item.content}</td>
+                                    <td className={styles.tableFirst}> <span> {task.done ? 'Feito' : 'Pendente'} </span> </td>
+                                    <td className={styles.tableSecond}>{task.content}</td>
                                     <td className={styles.tableThird}> <span> 2 horas atrás </span> </td>
                                 </tr>
                             </tbody>

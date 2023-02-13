@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { ListItem } from './ListItem';
-import { Modal } from './Modal';
 
 import styles from './Table.module.css';
 
@@ -15,14 +14,13 @@ export type Item = {
 export function Table(){
 
     const[list, setList] = useState<Item[]>([
-        { id: 1, content: "Item aleatóride para testes 1", done: false},
-        { id: 2, content: "Item aleatóride para testes 2", done: true},
+        { id: 1, content: "Item aleatório para testes 1", done: false},
+        { id: 2, content: "Item aleatório para testes 2", done: true},
         { id: 3, content: "Estudar ReactJS", done: false},
+        { id: 4, content: "Estudar NodeJS", done: false},
     ]);
 
     const [inputItem, setInputItem] = useState('');
-
-    const [isOpen, setIsOpen] = useState(false);
 
     function handleAddItem() {
         if(inputItem !== ''){        
@@ -71,22 +69,16 @@ export function Table(){
                     <table className={styles.table}>                   
                         <tbody>
                             {list.map((item)=>(
-                                <ListItem   key={item.id} 
-                                            task={item} 
-                                            onDeleteItem={onDeleteItem}
-                                            isOpen={isOpen}
-                                            setIsOpen={()=> setIsOpen(!isOpen)}
-                                />
+                                <ListItem   key={item.id}
+                                task={item}
+                                onDeleteItem={onDeleteItem}
+                            />
                                             
                             ))}
                         </tbody>
                     </table>
                 </div>
-            </main>
-
-            <Modal  isOpen={isOpen} 
-                    setCloseModal={() => setIsOpen(!isOpen)}
-            />
+            </main>            
 
         </div>
     );
