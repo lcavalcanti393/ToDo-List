@@ -82,7 +82,7 @@
 }
 
 .taskHeader button[type=submit]:hover {
-    background: var(--green-200);
+    background: var(--green);
     color: var(--white);
 
     border: 2px solid var(--green);
@@ -132,6 +132,15 @@
     .tableContainer {
         margin: 0 1rem;
         font-size: 12px;
+    }
+
+    @media (max-width: 526px) {
+        .taskHeader {
+            flex-direction: column;
+            gap: 0.5rem;
+            flex: 1;
+        }
+
     }
 }
 
