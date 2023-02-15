@@ -1,5 +1,7 @@
 <h1>
-    <img src="./src/assets/project-screen.png">
+    <a href="https://lucastodolist.netlify.app/" alt="Lista de Tarefas">
+        <img src="./src/assets/project-screen.png">
+    </a>
     <p align="center">Projeto To-Do List</p>
 </h1>
 
