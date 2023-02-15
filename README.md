@@ -32,11 +32,6 @@
 ```
 
 ```bash
-    #Clone the project
-    $ git clone https://github.com/lcavalcanti393/ToDo-List
-```
-
-```bash
     #Install the dependencies
     $ npm install
 ```
