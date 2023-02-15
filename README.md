@@ -28,7 +28,7 @@
 
 ```bash
     #Enter the directory
-    $ cd my-app
+    $ cd ToDo-List
 ```
 
 ```bash
