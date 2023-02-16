@@ -94,6 +94,16 @@
 
 }
 
+.tableCount {
+    margin: 1rem 0;
+
+    font-weight: bold;
+}
+
+.tableCount > span {
+    margin-left: 5%;
+}
+
 .table {
     width: 90%;
 
@@ -109,9 +119,19 @@
     box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
 }
 
+.empty {
+    text-align: center;
+    font-size: 18px;
+
+    padding: 5rem;
+
+    color: var(--gray-500);
+    
+}
 
 .table tbody tr {
     border-radius: 8px;
+
 }
 
 .table tbody tr:nth-child(odd) {

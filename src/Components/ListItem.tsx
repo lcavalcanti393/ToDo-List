@@ -18,10 +18,11 @@ export function ListItem({ task,onDeleteItem }: Props) {
         onDeleteItem(task);
     }
 
+
     return (
         <tr key={task.id}>
             <td>  
-                <input    
+                <input
                     type="checkbox" 
                     onChange={e => setIsChecked(e.target.checked)}
                     checked={isChecked}

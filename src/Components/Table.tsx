@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import { ClipboardText } from 'phosphor-react';
+import {  useState } from 'react';
 import { ListItem } from './ListItem';
 
 import styles from './Table.module.css';
@@ -46,7 +47,7 @@ export function Table(){
 
         setList(newListWithDeletedItem);
     }
-
+    
     return(
         <div className={styles.container}>
             <header className={styles.taskHeader}>
@@ -66,17 +67,36 @@ export function Table(){
 
             <main>
                 <div className={styles.tableContainer}>
+
+                    <div className={styles.tableCount}>
+                        <span>Tarefas cadastradas: {list.length}</span>
+
+                    </div>
+
                     <table className={styles.table}>                   
                         <tbody>
+
+                            {list.length <= 0 && (
+                                <tr className={styles.empty}>
+                                    <td>
+                                        <ClipboardText size={32} />
+                                        <p>Sem tarefas cadastradas</p>
+                                    </td>
+                                </tr>
+                            )}
+                                
                             {list.map((item)=>(
                                 <ListItem   key={item.id}
                                 task={item}
                                 onDeleteItem={onDeleteItem}
-                            />
+                                />
+                            
                                             
                             ))}
                         </tbody>
                     </table>
+
+                    
                 </div>
             </main>            
 
