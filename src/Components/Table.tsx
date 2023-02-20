@@ -1,5 +1,6 @@
-import { ClipboardText } from 'phosphor-react';
+import { ClipboardText, PlusCircle } from 'phosphor-react';
 import {  useState } from 'react';
+
 import { ListItem } from './ListItem';
 
 import styles from './Table.module.css';
@@ -39,13 +40,15 @@ export function Table(){
         return null
     }
 
-    function onDeleteItem(listItens: Item): void {
-        
+    function onDeleteItem(listItens: Item) {
+
+            
         const newListWithDeletedItem = list.filter(lists => {
             return lists !== listItens;
         });
 
         setList(newListWithDeletedItem);
+
     }
     
     return(
@@ -57,10 +60,12 @@ export function Table(){
                         placeholder="Escrever nova tarefa"
                         onChange={e=>setInputItem(e.target.value)}
                 />
+
                 <button type='submit' 
                         onClick={handleAddItem} 
                 >
-                    <strong>Cadastrar Nova Tarefa</strong>
+                    
+                    <strong>Criar Tarefa</strong>
                 </button>
                 
             </header>
@@ -70,7 +75,6 @@ export function Table(){
 
                     <div className={styles.tableCount}>
                         <span>Tarefas cadastradas: {list.length}</span>
-
                     </div>
 
                     <table className={styles.table}>                   

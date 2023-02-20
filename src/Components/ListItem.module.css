@@ -29,7 +29,7 @@ input[type=checkbox]:checked {
 
 .buttons {
     display: flex;
-    gap: 0.5rem;
+    gap: 1rem;
 
     justify-content: center;
     align-items: center;
@@ -44,6 +44,14 @@ input[type=checkbox]:checked {
     border-radius: 8px;
 
     transition: .3s;
+}
+
+.eye {
+    cursor: pointer;
+}
+
+.trash {
+    cursor: pointer;
 }
 
 .eye:hover {

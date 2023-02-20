@@ -72,13 +72,19 @@
     margin-right: 5%;
 
     height: 3rem;
-    width: 12rem;
+    width: 10rem;
     cursor: pointer;
-    padding: 0.5rem;
+
     font-weight: bold;
     border-radius: 8px;
 
     transition: 0.4s;
+}
+
+.taskHeader button[type=submit] > strong {
+    font-weight: bold;
+    align-items: center;
+    justify-content: center;
 }
 
 .taskHeader button[type=submit]:hover {
@@ -86,12 +92,6 @@
     color: var(--white);
 
     border: 2px solid var(--green);
-}
-
-.taskHeader button[type=submit] strong {
-    align-items: center;
-    justify-content: center;
-
 }
 
 .tableCount {
