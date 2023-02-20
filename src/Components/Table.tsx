@@ -22,6 +22,7 @@ export function Table(){
         { id: 4, content: "Estudar NodeJS", done: false},
     ]);
 
+
     const [inputItem, setInputItem] = useState('');
 
     function handleAddItem() {
@@ -99,7 +100,6 @@ export function Table(){
                             ))}
                         </tbody>
                     </table>
-
                     
                 </div>
             </main>            
