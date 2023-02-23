@@ -31,29 +31,33 @@ export function ListItem({ task,onDeleteItem }: Props) {
 
     return (
         <>
-            <tr key={task.id}>
-                <td>  
-                    <input
-                        type="checkbox" 
-                        onChange={e => setIsChecked(e.target.checked)}
-                        checked={isChecked}
-                    /> 
-                </td>
+            <table className={styles.tableLine}>
+                <tbody>
+                    <tr>
+                        <td>  
+                            <input
+                                type="checkbox" 
+                                onChange={e => setIsChecked(e.target.checked)}
+                                checked={isChecked}
+                            /> 
+                        </td>
 
-                <td className={isChecked ? styles.secondDataFalse : styles.secondData}> 
-                    {task.content} 
-                </td>
+                        <td className={isChecked ? styles.secondDataFalse : styles.secondData}> 
+                            {task.content} 
+                        </td>
 
-                <td className={styles.buttons}>
+                        <td className={styles.buttons}>
 
-                    <button className={styles.trash} onClick={handleDeleteItem}>
-                        <Trash  size={28} alt="Apagar tarefa"/>
-                    </button>
+                            <button className={styles.trash} onClick={handleDeleteItem}>
+                                <Trash  size={28} alt="Apagar tarefa"/>
+                            </button>
 
-                </td>
+                        </td>
 
+                    </tr>
+                </tbody>
+            </table>
 
-            </tr>
             <Modal  isOpen={isOpen}
                     setCloseModal={handleOpenModal}
                     task={task}

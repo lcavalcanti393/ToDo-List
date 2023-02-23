@@ -4,12 +4,16 @@ input[type=checkbox] {
 
 }
 
-input[type=checkbox]:checked {
-    background: var(--blue);
+.tableLine {
+    width: 100%;
+    border-radius: 8px;
+
+    margin-bottom: 0.5rem;
+    
 }
 
 .secondData {
-    width: 73%;
+    width: 85%;
     text-align: justify;
 
     font-size: 18px;
@@ -17,7 +21,7 @@ input[type=checkbox]:checked {
 }
 
 .secondDataFalse {
-    width: 73%;
+    width: 85%;
     text-align: justify;
     
     font-style: italic;

@@ -44,7 +44,7 @@ const MODAL_STYLE: object = {
 
 }
 
-export function Modal({ isOpen, setCloseModal  }: ModalContent, task: Props){
+export function Modal({ isOpen, setCloseModal  }: ModalContent){
 
     function handleCloseModal() {
         setCloseModal();
@@ -63,9 +63,12 @@ export function Modal({ isOpen, setCloseModal  }: ModalContent, task: Props){
 
                         <table className={styles.tableModal}>
                             <tbody>
-                                    <p>Tarefa ainda não concluída! Conclua-a para excluir.</p>
+                                    <tr>
+                                        <td>Tarefa ainda não concluída! Conclua-a para excluir.</td>
+                                    </tr>
                             </tbody>
                         </table>
+                        
                     </main>                    
 
                     <footer className={styles.footerModal}>

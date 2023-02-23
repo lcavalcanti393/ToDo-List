@@ -16,12 +16,11 @@ export type Item = {
 export function Table(){
 
     const[list, setList] = useState<Item[]>([
-        { id: 1, content: "Item aleatório para testes 1", done: false},
-        { id: 2, content: "Item aleatório para testes 2", done: true},
-        { id: 3, content: "Estudar ReactJS", done: false},
-        { id: 4, content: "Estudar NodeJS", done: false},
+        { id: 0, content: "Item aleatório para testes 1", done: false},
+        { id: 1, content: "Item aleatório para testes 2", done: true},
+        { id: 2, content: "Estudar ReactJS", done: false},
+        { id: 3, content: "Estudar NodeJS", done: false},
     ]);
-
 
     const [inputItem, setInputItem] = useState('');
 
@@ -78,28 +77,23 @@ export function Table(){
                         <span>Tarefas cadastradas: {list.length}</span>
                     </div>
 
-                    <table className={styles.table}>                   
-                        <tbody>
+                    <div className={styles.table}>                                        
 
                             {list.length <= 0 && (
-                                <tr className={styles.empty}>
-                                    <td>
+                                <div className={styles.empty}>
                                         <ClipboardText size={32} />
                                         <p>Sem tarefas cadastradas</p>
-                                    </td>
-                                </tr>
+                                </div>
                             )}
                                 
                             {list.map((item)=>(
                                 <ListItem   key={item.id}
                                 task={item}
                                 onDeleteItem={onDeleteItem}
-                                />
-                            
-                                            
+                                />                                           
                             ))}
-                        </tbody>
-                    </table>
+                       
+                    </div>
                     
                 </div>
             </main>            
